@@ -1,4 +1,5 @@
 using RotatingBendingTestBench.Data;
+using RotatingBendingTestBench.Services;
 using Microsoft.EntityFrameworkCore;
 
 var builder = WebApplication.CreateBuilder(args);
