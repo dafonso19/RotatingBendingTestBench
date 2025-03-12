@@ -1,0 +1,24 @@
+﻿@model RotatingBendingTestBench.Models.TestSimulator
+
+<h2>Define Test Simulator</h2>
+<form asp-action="Start" method="post">
+    <div>
+        <label asp-for="Name">Sequence Name:</label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+    <h3>Steps</h3>
+    <div>
+        <label>Step 1 - Rotation Speed (RPM):</label>
+        <input type="number" step="0.1" name="Steps[0].RotationSpeedSetpoint" class="form-control" required />
+    </div>
+    <div>
+        <label>Step 1 - Duration (seconds):</label>
+        <input type="number" name="Steps[0].Duration" class="form-control" required />
+    </div>
+    <button type="submit" class="btn btn-primary">Start Test</button>
+</form>
+
+@section Scripts {
+    <partial name="_ValidationScriptsPartial" />
+}
