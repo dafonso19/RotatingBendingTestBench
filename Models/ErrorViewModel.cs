@@ -1,4 +1,4 @@
-namespace RotatingBendingTestBench.Models
+﻿namespace RotatingBendingTestBench.Models
 {
     public class ErrorViewModel
     {

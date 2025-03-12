@@ -28,11 +28,11 @@ namespace RotatingBendingTestBench.Controllers
             if (ModelState.IsValid)
             {
                 _context.TestSimulator.Add(simulator);
-                _context.SaveChanges(); 
+                _context.SaveChanges(); //save sequence and id
 
                 var results = _simulationService.SimulateTest(simulator);
                 _context.TestResult.AddRange(results);
-                _context.SaveChanges();
+                _context.SaveChanges(); //save results
 
                 return RedirectToAction("Results", new { id = simulator.Id });
             }

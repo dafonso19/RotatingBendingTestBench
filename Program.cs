@@ -9,6 +9,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<TestBenchContext>(options =>
     options.UseSqlite(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddScoped<TestSimulationService>();
 
 var app = builder.Build();
 
