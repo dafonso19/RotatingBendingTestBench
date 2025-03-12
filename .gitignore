@@ -1,0 +1,10 @@
+.vs/
+*.user
+*.suo
+*.sln.docstates
+bin/
+obj/
+*.db
+*.nupkg
+*.log
+*.tmp
