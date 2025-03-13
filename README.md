@@ -36,9 +36,8 @@ I made a web app using ASP.NET Core to simulate a test
 
 ## Limitations
 
-**Only 1 Step**: 
-- The form only lets you add 1 step, so "Data: 1" is always 1.
-**Results Count**:
--  For a 10-second test, I get 9 results sometimes instead of 10.
-**Database**:
--  Using SQLite, which is fine for now, but might need a bigger database
+**Only 1 Step**: The form only lets you add 1 step, so "Data: 1" is always 1.
+
+**Results Count**: For a 10-second test, I get 9 results sometimes instead of 10.
+
+**Database**: Using SQLite, which is fine for now, but might need a bigger database
