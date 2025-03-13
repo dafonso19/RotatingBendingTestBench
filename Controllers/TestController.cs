@@ -34,7 +34,7 @@ namespace RotatingBendingTestBench.Controllers
                 _context.TestResult.AddRange(results);
                 _context.SaveChanges(); //save results
 
-                return RedirectToAction("Results", new { id = simulator.Id });
+                return RedirectToAction("Result", new { id = simulator.Id });
             }
             return View("Index", simulator);
         }
