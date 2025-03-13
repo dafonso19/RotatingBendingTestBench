@@ -6,4 +6,58 @@
     <li>Data: @Model.Data.Count</li>
     <li>Results: @Model.Results.Count data points</li>
 </ul>
+
+<h3>Test Results</h3>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Timestamp</th>
+            <th>Rotation Speed (RPM)</th>
+            <th>Stress Level (MPa)</th>
+            <th>Temperature (ºC)</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var result in Model.Results)
+        {
+            <tr>
+                <td>@result.Timestamp.ToString("yyyy-MM-dd HH:mm:ss")</td>
+                <td>@result.RotationSpeed.ToString("F2")</td>
+                <td>@result.StressLevel.ToString("F2")</td>
+                <td>@result.Temperature.ToString("F2")</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+
+<h3>Rotation Speed Over Time</h3>
+<canvas id="speedChart" width="400" height="200"></canvas>
+
+<script>
+    var ctx = document.getElementById('speedChart').getContext('2d');
+    var chart = new Chart(ctx, {
+        type: 'line',
+        data: {
+            labels: [@Html.Raw(string.Join(",", Model.Results.Select(r => $"'{r.Timestamp.ToString("HH:mm:ss")}'").OrderBy(t => t)))],
+            datasets: [{
+                label: 'Rotation Speed (RPM)',
+                data: [@Html.Raw(string.Join(",", Model.Results.Select(r => Math.Round(r.RotationSpeed))))],
+                borderColor: 'blue',
+                fill: false
+            }]
+        },
+        options: {
+            scales: {
+                x: { title: { display: true, text: 'Time' } },
+                y: { 
+                    title: { display: true, text: 'RPM' },
+                    ticks: { beginAtZero: true, stepSize: 100 }
+                }
+            }
+        }
+    });
+</script>
+
 <a asp-action="Index" class="btn btn-secondary">Back to Test Setup</a>
+
