@@ -20,7 +20,7 @@ I made a web app using ASP.NET Core to simulate a test
 
 **Set Up the Database**:
 
--Go to the project folder and drop any old database `dotnet ef database drop` 
+- Go to the project folder and drop any old database `dotnet ef database drop` 
 - Add a migration: `dotnet ef migrations add InitialCreateWithTestSimulator`
 - Update the database: `dotnet ef database update`
 
@@ -32,10 +32,13 @@ I made a web app using ASP.NET Core to simulate a test
 
 - Fill in a test name (like "Test 1"), speed (like 1000 RPM), and duration (like 10 seconds).
 - Click "Start Test".
-- You’ll see the results at `/Test/Result/{id}` with a table and graph.
+- Youâ€™ll see the results at `/Test/Result/{id}` with a table and graph.
 
 ## Limitations
 
-**Only 1 Step**: The form only lets you add 1 step, so "Data: 1" is always 1.
-**Results Count**: For a 10-second test, I get 9 results sometimes instead of 10.
-**Database**: Using SQLite, which is fine for now, but might need a bigger database
+**Only 1 Step**: 
+- The form only lets you add 1 step, so "Data: 1" is always 1.
+**Results Count**:
+-  For a 10-second test, I get 9 results sometimes instead of 10.
+**Database**:
+-  Using SQLite, which is fine for now, but might need a bigger database
